@@ -5,8 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emotion Selector</title>
     <link href="./index.css" rel="stylesheet" />
+    <script>
+      function showEmotionLevel(level) {
+        if (level === "good") {
+          document.getElementById("category").classList.add("hidden");
+          document.getElementById("level1").classList.remove("hidden");
+          document.getElementById("level2").classList.add("hidden");
+        } else if (level === "bad") {
+          document.getElementById("category").classList.add("hidden");
+
+          document.getElementById("level1").classList.add("hidden");
+          document.getElementById("level2").classList.add("hidden");
+        } else if (level === "energic" || level === "peaceful" || level === "passion") {
+          document.getElementById("level1").classList.add("hidden");
+          document.getElementById("level2").classList.remove("hidden");
+        } else if (level === "passionate" || level === "attracted" || level === "excited") {
+          // Perform desired action when final emotion level is selected
+          alert("Your selected emotion is: " + level);
+        }
+      }
+    </script>
   </head>
-  <body class="bg-gray-200">
+  <body class="bg-gray-200 text-center">
     <div class="container mx-auto py-10">
       <div id="emotion-container" class="max-w-md mx-auto">
         <div id="category" class="mb-6">
@@ -74,26 +94,5 @@
         </div>
       </div>
     </div>
-
-    <script>
-      function showEmotionLevel(level) {
-        if (level === "good") {
-          document.getElementById("category").classList.add("hidden");
-          document.getElementById("level1").classList.remove("hidden");
-          document.getElementById("level2").classList.add("hidden");
-        } else if (level === "bad") {
-          document.getElementById("category").classList.add("hidden");
-
-          document.getElementById("level1").classList.add("hidden");
-          document.getElementById("level2").classList.add("hidden");
-        } else if (level === "energic" || level === "peaceful" || level === "passion") {
-          document.getElementById("level1").classList.add("hidden");
-          document.getElementById("level2").classList.remove("hidden");
-        } else if (level === "passionate" || level === "attracted" || level === "excited") {
-          // Perform desired action when final emotion level is selected
-          alert("Your selected emotion is: " + level);
-        }
-      }
-    </script>
   </body>
 </html>
