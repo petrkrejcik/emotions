@@ -1,1 +1,99 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emotion Selector</title>
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-200">
+    <div class="container mx-auto py-10">
+      <div id="emotion-container" class="max-w-md mx-auto">
+        <div id="category" class="mb-6">
+          <h1 class="text-2xl font-bold mb-2">Select an Emotion Category:</h1>
+          <div class="space-y-2">
+            <button
+              onclick="showEmotionLevel('good')"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Good
+            </button>
+            <button
+              onclick="showEmotionLevel('bad')"
+              class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Bad
+            </button>
+          </div>
+        </div>
+        <div id="level1" class="hidden">
+          <h1 class="text-2xl font-bold mb-2">Select an Emotion Level:</h1>
+          <div class="space-y-2">
+            <button
+              onclick="showEmotionLevel('energic')"
+              class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Energic
+            </button>
+            <button
+              onclick="showEmotionLevel('peaceful')"
+              class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Peaceful
+            </button>
+            <button
+              onclick="showEmotionLevel('passion')"
+              class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Passion
+            </button>
+          </div>
+        </div>
+        <div id="level2" class="hidden">
+          <h1 class="text-2xl font-bold mb-2">Select an Emotion Level:</h1>
+          <div class="space-y-2">
+            <button
+              onclick="showEmotionLevel('passionate')"
+              class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Passionate
+            </button>
+            <button
+              onclick="showEmotionLevel('attracted')"
+              class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Attracted
+            </button>
+            <button
+              onclick="showEmotionLevel('excited')"
+              class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Excited
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showEmotionLevel(level) {
+        if (level === "good") {
+          document.getElementById("category").classList.add("hidden");
+          document.getElementById("level1").classList.remove("hidden");
+          document.getElementById("level2").classList.add("hidden");
+        } else if (level === "bad") {
+          document.getElementById("category").classList.add("hidden");
+
+          document.getElementById("level1").classList.add("hidden");
+          document.getElementById("level2").classList.add("hidden");
+        } else if (level === "energic" || level === "peaceful" || level === "passion") {
+          document.getElementById("level1").classList.add("hidden");
+          document.getElementById("level2").classList.remove("hidden");
+        } else if (level === "passionate" || level === "attracted" || level === "excited") {
+          // Perform desired action when final emotion level is selected
+          alert("Your selected emotion is: " + level);
+        }
+      }
+    </script>
+  </body>
+</html>
