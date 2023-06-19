@@ -8,8 +8,7 @@
   <link href="./index.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-100 h-full">
-  <!-- A fixed header -->
-  <nav class="bg-white shadow-lg flex h-12 align-middle sticky top-0">
+  <nav class="bg-white shadow-lg flex h-16 align-middle sticky top-0">
     <div id="back-button" class="flex items-center justify-center p-2">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -20,15 +19,12 @@
         />
       </svg>
     </div>
-    <!-- This element will always be at right edge -->
     <select id="language-select" class="rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 ml-auto mr-4">
       <option value="en">English</option>
       <option value="es">Español</option>
       <option value="cz">Čeština</option>
     </select>
   </nav>
-
-  <!-- A div element with Tailwind classes which contains a select element -->
 
 
   <div id="emotions-list" class="h-full"></div>
@@ -45,6 +41,6 @@
   });
 </script>
 
-  <script src="index.ts"></script>
+  <script src="index.ts" type="module"></script>
 </body>
 </html>
